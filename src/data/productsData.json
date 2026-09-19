@@ -1,0 +1,152 @@
+
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Classic Black Analog Watch",
+      "price": 2499,
+      "category": "",
+      "image": "/src/assets/image-1.png",
+      "status": false,
+      "rating": {
+        "rate": 4.7,
+        "count": 154
+      }
+    },
+    {
+      "id": 2,
+      "title": "Silver Chronograph Watch",
+      "price": 1499,
+      "category": "",
+      "image": "/src/assets/image-2.png",
+      "status": false,
+      "rating": {
+        "rate": 3.5,
+        "count": 89
+      }
+    },
+    {
+      "id": 3,
+      "title": "Minimalist White Dial Watch",
+      "price": 6399,
+      "category": "",
+      "image": "/src/assets/image-3.png",
+      "status": false,
+      "rating": {
+        "rate": 4.2,
+        "count": 276
+      }
+    },
+    {
+      "id": 4,
+      "title": "Golden Mesh Strap Watch",
+      "price": 4199,
+      "category": "",
+      "image": "/src/assets/image-4.png",
+      "status": false,
+      "rating": {
+        "rate": 2.8,
+        "count": 47
+      }
+    },
+    {
+      "id": 5,
+      "title": "Brown Leather Classic Watch",
+      "price": 5000,
+      "category": "",
+      "image": "/src/assets/image-5.png",
+      "status": false,
+      "rating": {
+        "rate": 4.9,
+        "count": 632
+      }
+    },
+    {
+      "id": 6,
+      "title": "Black Sport Digital Watch",
+      "price": 1250,
+      "category": "",
+      "image": "/src/assets/image-6.png",
+      "status": false,
+      "rating": {
+        "rate": 3.9,
+        "count": 118
+      }
+    },
+    {
+      "id": 7,
+      "title": "Rose Gold Women’s Watch",
+      "price": 2149,
+      "category": "",
+      "image": "/src/assets/image-7.png",
+      "status": false,
+      "rating": {
+        "rate": 4.4,
+        "count": 205
+      }
+    },
+    {
+      "id": 8,
+      "title": "Blue Dial Stainless Steel Watch",
+      "price": 2000,
+      "category": "",
+      "image": "/src/assets/image-8.png",
+      "status": false,
+      "rating": {
+        "rate": 2.6,
+        "count": 39
+      }
+    },
+    {
+      "id": 9,
+      "title": "Luxury Black Automatic Watch",
+      "price": 9500,
+      "category": "",
+      "image": "/src/assets/image-9.png",
+      "status": false,
+      "rating": {
+        "rate": 4.1,
+        "count": 321
+      }
+    },
+    {
+      "id": 10,
+      "title": "Green Dial Casual Watch",
+      "price": 8500,
+      "category": "",
+      "image": "/src/assets/image-10.png",
+      "status": false,
+      "rating": {
+        "rate": 3.7,
+        "count": 142
+      }
+    },
+    {
+      "id": 11,
+      "title": "Matte Black Premium Watch",
+      "price": 6300,
+      "category": "",
+      "image": "/src/assets/image-11.png",
+      "status": false,
+      "rating": {
+        "rate": 4.8,
+        "count": 517
+      }
+    },
+    {
+      "id": 12,
+      "title": "Silver Minimalist Watch",
+      "price": 1499,
+      "category": "",
+      "image": "/src/assets/image-12.png",
+      "status": false,
+      "rating": {
+        "rate": 3.2,
+        "count": 74
+      }
+    }
+  ]
+}
+
+
+
