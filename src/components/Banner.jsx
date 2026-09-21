@@ -1,20 +1,21 @@
-import React from 'react'
-import bannerImage from '../assets/banner.png'
+import React from "react";
+
+import bannerImage from "../assets/banner.png";
 
 const Banner = () => {
 
   return (
 
-    <section className="banner">
+    <div className="banner">
 
       <img
         src={bannerImage}
         alt="Smart Cart promotional banner"
       />
 
-    </section>
+    </div>
 
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;

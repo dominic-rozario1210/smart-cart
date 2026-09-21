@@ -1,6 +1,15 @@
-import React from 'react'
+import React from "react";
 
-const ProductCard = ({ product, addToCart }) => {
+const ProductCard = ({
+  product,
+  cart,
+  addToCart,
+  removeFromCart
+}) => {
+
+  const isInCart = cart.some(
+    (item) => item.id === product.id
+  );
 
   return (
 
@@ -11,17 +20,45 @@ const ProductCard = ({ product, addToCart }) => {
         alt={product.title}
       />
 
-      <h4>{product.title}</h4>
+      <h4>
+        {product.title}
+      </h4>
 
-      <p>₹{product.price}</p>
+      <p>
+        ₹{product.price}
+      </p>
 
-      <button onClick={() => addToCart(product)}>
-        Add to Cart
-      </button>
+      {
+        isInCart ? (
+
+          <button
+            style={{
+              backgroundColor: "#e74c3c",
+              color: "white"
+            }}
+            onClick={() =>
+              removeFromCart(product.id)
+            }
+          >
+            Remove From Cart
+          </button>
+
+        ) : (
+
+          <button
+            onClick={() =>
+              addToCart(product)
+            }
+          >
+            Add To Cart
+          </button>
+
+        )
+      }
 
     </div>
 
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;

@@ -1,30 +1,34 @@
-import React, { useState } from 'react'
-import Banner from './components/Banner'
-import ProductCard from './components/ProductCard'
-import Header from './components/Header'
-import Cart from './components/Cart'
-import productsData from './data/productsData.json'
-import './App.css'
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+
+import "./App.css";
 
 const App = () => {
 
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
 
     const existingProduct = cart.find(
       (item) => item.id === product.id
-    )
+    );
 
     if (existingProduct) {
 
       setCart(
         cart.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? {
+                ...item,
+                quantity: item.quantity + 1
+              }
             : item
         )
-      )
+      );
 
     } else {
 
@@ -34,77 +38,82 @@ const App = () => {
           ...product,
           quantity: 1
         }
-      ])
+      ]);
 
     }
-  }
+  };
 
   const increaseQuantity = (id) => {
 
     setCart(
       cart.map((item) =>
         item.id === id
-          ? { ...item, quantity: item.quantity + 1 }
+          ? {
+              ...item,
+              quantity: item.quantity + 1
+            }
           : item
       )
-    )
-  }
+    );
+  };
 
   const decreaseQuantity = (id) => {
 
     setCart(
       cart.map((item) =>
-        item.id === id
-          ? { ...item, quantity: item.quantity - 1 }
+        item.id === id && item.quantity > 1
+          ? {
+              ...item,
+              quantity: item.quantity - 1
+            }
           : item
-      ).filter((item) => item.quantity > 0)
-    )
-  }
+      )
+    );
+  };
 
   const removeFromCart = (id) => {
 
     setCart(
       cart.filter((item) => item.id !== id)
-    )
-  }
+    );
+  };
 
   return (
-    <>
+
+    <BrowserRouter>
+
       <Header cart={cart} />
 
-      <Banner />
+      <Routes>
 
-      <section className="products-section">
-
-        <h2>Our Products</h2>
-
-        <div className="product-card-container">
-
-          {
-            productsData.products.map((product) => (
-
-              <ProductCard
-                product={product}
-                key={product.id}
-                addToCart={addToCart}
-              />
-
-            ))
+        <Route
+          path="/"
+          element={
+            <Home
+              cart={cart}
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+            />
           }
+        />
 
-        </div>
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              increaseQuantity={increaseQuantity}
+              decreaseQuantity={decreaseQuantity}
+              removeFromCart={removeFromCart}
+            />
+          }
+        />
 
-      </section>
+      </Routes>
 
-      <Cart
-        cart={cart}
-        increaseQuantity={increaseQuantity}
-        decreaseQuantity={decreaseQuantity}
-        removeFromCart={removeFromCart}
-      />
+    </BrowserRouter>
 
-    </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
